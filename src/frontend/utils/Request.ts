@@ -37,7 +37,7 @@ const request = async <T>({
   }
 
   if (!response.ok) {
-    throw new Error(data?.error || `Request failed with status ${response.status}`);
+    throw new Error(data?.error || `Request to ${url} failed with status ${response.status} ${response.statusText}`.trim());
   }
 
   return data as T;
